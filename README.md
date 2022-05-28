@@ -23,7 +23,7 @@ This will build the gPScan binary in your /bin/ directory.
     
 ## Usage
 
-It alway's follows this schema, where you first specify one of the two protocol's (tcp, udp), after that you can insert your destination, which you want to check for open ports(localhost, any IP adress). Last but not least, append the port that should be checked.
+It always follows this schema, where you first specify one of the two protocols (tcp, udp), after that you can insert your destination, which you want to check for open ports(localhost, any IP address). Last but not least, append the port that should be checked.
 ```sh
 gpscan <protocol> <destination> <port>
 ```
