@@ -6,3 +6,6 @@ fmt:
 
 vet:
 	go vet ./...
+
+release:
+	goreleaser build
