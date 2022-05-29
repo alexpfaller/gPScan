@@ -34,6 +34,10 @@ It always follows this schema, where you first specify one of the two protocols 
 ```sh
 gpscan <protocol> <destination> <port>
 ```
+For the port you can specify a port, or check all. For the all option, you can choose between different speed levels.
+- -a     (normal speed)
+- -af    (faster)
+- -asf   (super fast)
 
 Example:
 ```sh
@@ -44,3 +48,11 @@ To check if port 8080 on your machine is currently open, or closed.
 gpscan tcp 132.203.220.211 443
 ```
 To check if port 443 (https) on another machine is open.
+```sh
+gpscan tcp localhost -a
+```
+To check all ports on your local machine.
+```sh
+gpscan tcp localhost -af
+```
+To check all ports on your local machine, but faster than normal mode.
