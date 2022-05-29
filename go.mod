@@ -1,4 +1,4 @@
-module github.com/alexpfaller/gPScan
+module github.com/alexpfaller/gPScan/v2
 
 go 1.18
 
