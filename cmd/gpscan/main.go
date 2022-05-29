@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"time"
+
+	"github.com/gookit/color"
 )
 
 var (
@@ -18,6 +21,16 @@ func main() {
 	} else {
 		fmt.Println("Please enter a supported protocol! (tcp or udp)")
 	}
+
+	if port == "-a" {
+		allScan(80)
+	} else if port == "-af" {
+		allScan(5)
+	} else if port == "-asf" {
+		allScan(0)
+	} else {
+		normalScan()
+	}
 }
 func normalScan() {
 	portStr := dest + ":" + port
@@ -27,4 +40,24 @@ func normalScan() {
 	} else {
 		fmt.Printf("Port %v is currently closed!", port)
 	}
+}
+
+func allScan(s int) {
+	color.Cyan.Printf("Press ctrl + c  to abort!\n")
+	time.Sleep(4 * time.Second)
+	openPorts := make([]string, 0)
+	for i := 0; i <= 65535; i++ {
+		p := fmt.Sprintf("%v", i)
+		portStr := dest + ":" + p
+		_, err := net.Dial(mode, portStr)
+		if err == nil {
+			fmt.Printf("Port %v is open\n", p)
+			openPorts = append(openPorts, p)
+		} else {
+			fmt.Printf("Port %v is closed\n", p)
+		}
+		time.Sleep(time.Duration(s) * time.Millisecond)
+	}
+	color.Danger.Printf("Following ports are currently open: %v", openPorts)
+
 }
