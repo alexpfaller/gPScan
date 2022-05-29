@@ -1,5 +1,5 @@
 build:
-	go build -o /bin/gpscan cmd/gpscan
+	go build -o /bin/gpscan ./cmd/gpscan
 
 fmt:
 	go fmt ./...
