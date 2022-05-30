@@ -53,11 +53,11 @@ gpscan tcp 132.203.220.211 443
 
 Check all ports on local machine
 ```sh
-gpscan tcp localhost -a
+gpscan -a tcp localhost
 ```
 
 ## Contributors
 
-| [IlliaFox](https://github.com/illiafox) |
-|:----------------------------------------|
+| [IlliaFox](https://github.com/illiafox) | [brittonhayes](https://github.com/brittonhayes)|
+|:----------------------------------------|------------------------------------------------|
 
