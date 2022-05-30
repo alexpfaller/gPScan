@@ -32,27 +32,32 @@ This will build the gPScan binary in your /bin/ directory.
 
 It always follows this schema, where you first specify one of the two protocols (tcp, udp), after that you can insert your destination, which you want to check for open ports(localhost, any IP address). Last but not least, append the port that should be checked.
 ```sh
-gpscan <protocol> <destination> <port>
+gpscan <flags> <protocol> <destination> <port>
 ```
-For the port you can specify a port, or check all. For the all option, you can choose between different speed levels.
-- -a     (normal speed)
-- -af    (faster)
-- -asf   (super fast)
 
-Example:
+## Example:
+Check port `8080` on local machine
 ```sh
 gpscan tcp localhost 8080
 ```
-To check if port 8080 on your machine is currently open, or closed.
+
+Set custom timeout (default `200ms`)
+```sh
+gpscan --timeout=1s tcp localhost 8080
+```
+
+Check https (443) on remote machine
 ```sh
 gpscan tcp 132.203.220.211 443
 ```
-To check if port 443 (https) on another machine is open.
+
+Check all ports on local machine
 ```sh
 gpscan tcp localhost -a
 ```
-To check all ports on your local machine.
-```sh
-gpscan tcp localhost -af
-```
-To check all ports on your local machine, but faster than normal mode.
+
+## Contributors
+
+| [IlliaFox](https://github.com/illiafox) |
+|:----------------------------------------|
+
