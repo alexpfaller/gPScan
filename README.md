@@ -6,7 +6,7 @@
 [![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/alexpfaller/gPScan)](https://github.com/alexpfaller/gPScan)
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](https://go.dev/)
-[![GoDoc reference example](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/alexpfaller/gPScan/cmd/gpscan)
+[![GoDoc reference example](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/alexpfaller/gPScan/v2@v2.0.2/cmd/gpscan)
 
 
 # gPScan
