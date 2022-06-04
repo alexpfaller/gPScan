@@ -11,7 +11,7 @@ builds:
       - linux
       - windows
       - darwin
-    main: "./cmd/gpscan"
+    main: "./cmd"
 
 archives:
   - replacements:
