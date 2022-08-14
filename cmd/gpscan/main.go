@@ -36,9 +36,9 @@ func normalScan() {
 	portStr := dest + ":" + port
 	_, err := net.Dial(mode, portStr)
 	if err == nil {
-		fmt.Printf("Port %v is currently open!", port)
+		color.Danger.Printf("[-] Port %v is currently open!", port)
 	} else {
-		fmt.Printf("Port %v is currently closed!", port)
+		color.Blue.Printf("[+] Port %v is currently closed!", port)
 	}
 }
 
@@ -51,13 +51,13 @@ func allScan(s int) {
 		portStr := dest + ":" + p
 		_, err := net.Dial(mode, portStr)
 		if err == nil {
-			fmt.Printf("Port %v is open\n", p)
+			color.Danger.Printf("[-] Port %v is open\n", p)
 			openPorts = append(openPorts, p)
 		} else {
-			fmt.Printf("Port %v is closed\n", p)
+			color.Blue.Printf("[+] Port %v is closed\n", p)
 		}
 		time.Sleep(time.Duration(s) * time.Millisecond)
 	}
-	color.Danger.Printf("Following ports are currently open: %v", openPorts)
+	color.Danger.Printf("Following ports are currently open:\n%v\n", openPorts)
 
 }
